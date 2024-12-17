@@ -1,0 +1,203 @@
+/* Mobile-specific styles */
+@media screen and (max-width: 400px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+    body {
+        padding-top: 2px 1px; /* Reduce padding for smaller screens */
+    }
+
+    header {
+        padding: 40px 15px; /* Adjust padding */
+        height: auto; /* Let the header adjust its height automatically */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align elements to the left */
+    }
+
+    header .logo-img {
+        height: 60px; /* Adjust logo size */
+        left: 10px; /* Position closer to the edge */
+    }
+
+    header .logo-text {
+        font-size: 14px; /* Smaller font size */
+        left: 80px; /* Adjust positioning */
+    }
+
+    header .bx-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 1000; /* Add a high z-index */
+    }
+    
+
+    header .navbar {
+        display: none; /* Hide the navigation by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 100%; /* Place below the header */
+        left: 0;
+        width: 100%;
+        background-color: darkslategray; /* Background for visibility */
+        padding: 10px 0;
+    }
+
+    header .navbar a {
+        padding: 10px;
+        text-align: center; /* Center navigation links */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    /* Show navigation when menu icon is clicked */
+    header .navbar.active {
+        display: flex;
+    }
+
+    .home {
+        padding: 200px 6px;
+    }
+    .home-container {
+       
+        margin-top: 200px;
+    }
+.media-section{
+    position:absolute;
+    top:380px;
+}
+
+.home-content h1{
+    font-size: 30px;
+    position: absolute;
+    top:250px;
+}
+.home .text-animate h3{
+    font-size: 15px;
+    position:absolute;
+    top:168px;
+}
+.home p{
+ font-size: 13px;
+ position:absolute;
+ top:190px;
+}
+
+.home .btn{
+    position:absolute;
+    top:280px;
+}
+.about{
+    padding: 680px 6px;
+}
+.about .heading{
+     font-size: 26px;
+    position: absolute;
+    top:40px;
+    left:125px;
+}
+.about .about-img{
+    max-width: 80%;
+    max-height:20%;
+    position: absolute;
+    top:1020px;
+    left: 50px;
+    
+}
+.about .about-text-container{
+    position:absolute;
+    top:100px;
+    left:10px;
+    right:10px;
+}
+.contact{
+    padding: 500px 6px;
+}
+.contact .heading{
+    font-size: 26px;
+    position: absolute;
+    top:110px;
+    left:125px;
+}
+.contact .contact-container{
+    margin-top: 220px;
+}
+.contact .photo-section{
+    position: absolute;
+    top:860px;
+    left: 30px;
+}
+.contact .stext{
+    position: absolute;
+    top:650px;
+    left: 30px;
+}
+.contact .map-container{
+    position: absolute;
+    top:170px;
+    width:90%;
+    left:-20px;
+}
+.contact .social-links{
+    position:absolute;
+    top:600px;
+    left:70px;
+}
+.chat-bubble{
+    position:fixed;
+    bottom:60px;
+     border-radius: 50% ;
+}
+.messenger-icon {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    object-fit: cover;
+}
+.services{
+    padding: 800px 6px;
+}
+.services h2{
+    position: absolute;
+    top:100px;
+    left:120px;
+}
+.service-container{
+    margin-top: -730px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.service-item{
+    flex-direction: column;
+    width: calc(100.33% - 50px); /* Three items per row with space between */
+}
+.service-image {
+    width: 25%; /* Adjust the width to make the image smaller */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    margin-bottom: 15px; /* Add more space below the image */
+    object-fit: cover; /* Ensure the image fits well */
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    z-index: 999;
+    margin-top: 20px;
+}
+footer .footer-text p {
+    font-size: 12px; /* Adjusted font size */
+    margin: 0;
+}
+}
+

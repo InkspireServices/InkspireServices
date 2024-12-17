@@ -1,0 +1,89 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Printing and Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        html {
+            scroll-behavior: smooth; /* This enables smooth scrolling */
+        }
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #sample-photo {
+            position:absolute;
+            left:1280px;
+            top:280px;
+            max-width: 30%;
+            height: 25%;
+            margin: 10px 0;
+
+        }
+        #sample-gif {
+            position:absolute;
+            left:1260px;
+            top:320px;
+            max-width: 50%;
+            height: 40%;
+            margin: 10px 0;
+          
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo" class="logo-img">
+            <span class="logo-text">Inkspire and Services</span>
+        </a>
+        
+        
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    
+    <!-- Home Section -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1>Welcome to <span>Inkspire and Services</span><span class="animate" style="--i:2;"></span></h1>
+            <div class="text-animate">
+                <h3> - Student Price - </h3>
+                <span class="animate" style="--i:3;"></span>
+            </div>
+            <p>We cater Printing and Photocopy Services. Also we cater a variety of services that would help each individual when it comes to academics or personal needs.<span class="animate" style="--i:4;"></span></p>
+            
+        </div>
+
+        <!-- Media Section -->
+        <div class="media-section">
+            <h2>Check Out Our Work</h2>
+            <img id="sample-photo" src="images/books1.png" alt="Sample Photo">
+            <img id="sample-gif" src="images/ppt.png" alt="Sample GIF">
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 Inkspire and Services | All Rights Reserved.</p>
+            <span class="animate scroll" style="--i:1;"></span>
+        </div>
+    </footer>
+
+    <script src="business.js"></script> 
+</body>
+</html>

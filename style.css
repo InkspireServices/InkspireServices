@@ -1,0 +1,663 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+body {
+ padding-top: 80px; /* Add enough padding to avoid content being hidden under the header */
+    padding-bottom: 0px; /* Prevent content from being hidden behind the footer */
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkslategray;
+    padding: 15px 20px;  /* Smaller padding */
+    height: 11%; /* Smaller height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Vertically center align items */
+    text-decoration: none;
+    
+}
+
+header .logo-img {
+    position: absolute;
+    left: 8px;
+    height: 100px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 2px; /* Space between the logo and the text */
+    pointer-events: none; /* Makes the logo image untouchable */
+}
+
+header .logo-text {
+    position: absolute;
+    left: 90px;
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: white;
+    pointer-events: none; /* Makes the logo text untouchable */
+}
+
+header .bx-menu {
+    font-size: 20px; /* Adjusted icon size */
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+header .navbar {
+    position:absolute;  
+    left:1170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Navigation Link Styles */
+header .navbar a {
+    
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative; /* Required for the hover underline effect */
+}
+
+/* Hover Effect */
+header .navbar a:hover {
+    color: lightgreen;
+}
+
+/* Active Link Indication */
+header .navbar a.active {
+    color: lightgreen;
+}
+
+/* Active Page Background Highlight */
+header .navbar a.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Place underline at the bottom */
+    left: 20px;
+    width: 50%;
+    height: 1px;
+    background-color: lightgreen;
+    border-radius: 2px;
+}
+
+
+header .navbar span {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: lightgreen;
+    display: none;
+}
+
+header .navbar a:hover {
+    color: rgb(20, 44, 20);
+}
+
+/* Home Section */
+.home {
+   
+    background: white;
+    color: rgb(0, 0, 0);
+    padding: 120px 160px; /* Reduced padding for better balance */
+    text-align: center;
+    position: relative;
+}
+
+.home h1 {
+    margin-left: -5px;
+    margin-top:-160px;
+    font-size: 42px; /* Slightly smaller font size */
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.home h1 span {
+    background-image: linear-gradient(90deg, transparent,blue,orange,red);
+    color: transparent;
+    background-size: 200%; /* Larger gradient for smooth effect */
+    -webkit-background-clip: text; /* Clip background to text for WebKit browsers */
+    background-clip: text; /* Standard property */
+    animation: textFill 7s ease-in-out infinite; /* Smooth animation with ease-in-out */
+}
+
+/* Keyframes for gradient movement */
+@keyframes textFill {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.home .text-animate h3 {
+    margin-top:10px;
+    font-size: 20px; /* Adjusted font size */
+  
+}
+
+.home p {
+    margin-left: -5px;
+    margin-top:-180px;
+    font-size: 16px; /* Slightly smaller font size */
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.home .btn-box {
+    margin-top: 30px;
+}
+
+.home .btn-box .btn {
+    background-color: darkslategray;
+    color: white;
+    padding: 12px 30px; /* Adjusted padding */
+    font-size: 16px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.home .btn-box .btn:hover {
+    color:lightgreen;
+}
+
+.home .home-sci {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.home .home-sci a {
+    color: white;
+    font-size: 28px; /* Slightly smaller size */
+}
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Add space between content and media */
+    padding: 20px;
+}
+
+.home-content {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+.media-section {
+   
+    flex: 1;
+    text-align: center;
+}
+#sample-photo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#sample-video {
+    margin-left: 170px;
+    margin-top: -115px;
+    max-width: 45%;
+    height: 50%;
+    border-radius: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for video */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Services Section */
+.services {
+    background: #fff;
+    padding: 100px 60px; /* Adjust padding for better balance */
+    text-align: center;
+}
+
+/* Initial state for animation */
+.services h2 {
+    font-size: 28px;
+    position: absolute;
+    top: 120px;
+    left: 700px;
+    margin-bottom: 10px; /* Add some space below the header */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animated state */
+.services h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Service Container Styles */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align items to the center */
+    gap: 20px; /* Add space between items */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s forwards; /* Apply fadeInUp animation */
+}
+
+/* Animation for Fade-In and Slide-Up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Service Item Styles */
+.service-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Three items per row with space between */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Apply smooth transition for transform and box-shadow */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInItem 0.5s forwards; /* Apply fadeInItem animation */
+    animation-delay: 0.2s; /* Staggered delay for each item */
+}
+
+/* Staggered Fade-In Effect for Each Service Item */
+@keyframes fadeInItem {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service Item Hover Effect */
+.service-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the item on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow to indicate focus */
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 30px;
+    color: #0B890B;
+    margin-bottom: 15px;
+}
+
+/* Service Content */
+.service-content h3 {
+    font-size: 18px; /* Adjusted font size for better balance */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.service-content h1 {
+    font-size: 16px;
+    color: #0B890B;
+    font-weight: bold;
+}
+
+/* Service Image - Smaller and Well Aligned */
+.service-image {
+    width: 25%; /* Adjust the width to make the image smaller */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    margin-bottom: 15px; /* Add more space below the image */
+    object-fit: cover; /* Ensure the image fits well */
+}
+
+/* About Section */
+.about {
+    background: #f9f9f9;
+    padding: 280px 160px;
+    text-align: center;
+    position:relative;
+}
+
+/* Text Animation */
+.about h3, .about .heading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 1.3s ease;
+}
+
+.about h3.visible, .about .heading.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.about .heading {
+    font-size: 28px;
+    position: absolute;
+    top:40px;
+    left:700px;
+}
+
+.about .btn-box {
+   position:absolute;
+}
+
+.about .btn-box .btn {
+    background-color: #0B890B;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.about .btn-box .btn:hover {
+    background-color: #1c7430;
+}
+
+/* Image animation */
+.about-img {
+    position:absolute;
+    top:105px;
+    left:1000px;
+    max-width: 80%;
+    height:75%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 20px;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+    /* Initial Animation */
+    animation: photoAnimation 2s ease-in-out forwards;
+    transform-origin: center;
+}
+
+/* Hover effect */
+.about-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Adds pointer cursor for interactivity */
+}
+
+/* Active (click) effect */
+.about-img:active {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for photo animation */
+@keyframes photoAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.about-text-container {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    position: absolute;
+    top: 112px;
+    left: 80px;
+
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animated state */
+.about-text-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.about-text-container p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+/* Contact Section */
+.contact {
+    background: #fff;
+    padding: 100px 50px;
+    text-align: center;
+}
+/* Style for the photo section */
+.photo-section {
+    text-align: center;
+    margin-top: 100px;
+    position:absolute;
+    left:1100px;
+
+}
+
+.contact-photo {
+    width: 40%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contact h2 {
+    position: absolute;
+    top: 120px;
+    left: 700px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Update .contact-container for proper alignment */
+.contact .contact-container {
+    display: flex;
+    justify-content: space-between; /* Align items to left and right */
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Add space between map and social links */
+}
+
+.contact .map-container {
+    width: 50%; /* Set width to 60% for the map */
+    margin-left: 40px;
+    position: relative;
+}
+
+/* Text above the map with margin for spacing */
+.contact .map-container .text {
+    font-size: 18px;
+    margin-bottom: 20px; /* Space between text and map */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+.contact .stext {
+    font-size: 18px;
+    position:absolute;
+    left:1100px;
+    margin-bottom: 20px; /* Space between text and map */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+.contact .social-links {
+    width: 35%; /* Set width to 35% for social links */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 15px;
+    left:-60px;
+    margin-top: 100px; /* Add margin to move social links lower */
+    position: relative;
+}
+
+.contact .social-links a {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact .social-links a:hover {
+    color: #0B890B;
+}
+
+.contact .social-links i {
+    font-size: 28px;
+}
+
+/* Facebook - Blue and White */
+.contact .social-links a[href*="facebook.com"] i {
+    background: linear-gradient(45deg, #1877F2, #3b5998);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+/* Instagram - Gradient Colors */
+.contact .social-links a[href*="instagram.com"] i {
+    background: linear-gradient(45deg, #0099F7, #F1008D, #D2006D, #F5A623, #F9D000);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+/* TikTok - Black, White, Razzmatazz, and Splash */
+.contact .social-links a[href*="tiktok.com"] i {
+    background: linear-gradient(45deg, #2b292a, #111111);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 22px;
+    border: 2px solid #000;
+}
+
+/* Gmail - Use an image instead of icon */
+.contact .social-links a[href*="mailto:"] .gmail-icon {
+    width: 35px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Contact Icon (Phone) */
+.contact .social-links a[href*="tel:"] i {
+    color: #000000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 22px;
+    border-radius: 50%;
+}
+/* Style for the floating Messenger Icon */
+.chat-bubble {
+    position: fixed;
+    bottom: 45px;
+    right: 30px;
+    background-color: transparent; /* No background color */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0.1, 0.1, 0.1, 0.5);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.chat-bubble:hover {
+    background-color: #455e76; /* Facebook blue on hover */
+    border-radius: 50%;
+}
+
+.messenger-icon {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    object-fit: cover;
+}
+
+/* Footer Section */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 11px 0;
+    z-index: 99;
+}
+footer .footer-text p {
+    font-size: 14px; /* Adjusted font size */
+    margin: 0;
+}
+

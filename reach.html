@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("zqTDL9COTIWRsINGx"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .contact-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .contact-form h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+        .form-group button {
+            background: #0B890B;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+        .form-group button:hover {
+            background: #066806;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" name="middleName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="suffix">Suffix</label>
+            <input type="text" id="suffix" name="suffix">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message/Comment</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <!-- For now, omit the file input for testing -->
+        <!-- <div class="form-group">
+            <label for="files">Upload Files</label>
+            <input type="file" id="files" name="files" multiple>
+        </div> -->
+        <div class="form-group">
+            <button type="button" onclick="submitForm()">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('contactForm');
+        const formData = new FormData(form);
+
+        const emailParams = {
+            firstName: formData.get('firstName'),
+            middleName: formData.get('middleName'),
+            lastName: formData.get('lastName'),
+            suffix: formData.get('suffix'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        };
+
+        // Sending the form data to EmailJS
+        emailjs
+            .send("service_rp9gvkd", "template_wvq7j8l", emailParams)
+            .then(
+                function(response) {
+                    alert("Email sent successfully!");
+                },
+                function(error) {
+                    alert("Failed to send email. Please try again.");
+                    console.error("EmailJS error:", error);
+                }
+            );
+            emailjs.init("zqTDL9COTIWRsINGx", {
+    debug: true
+});
+
+    }
+</script>
+
+</body>
+</html>
